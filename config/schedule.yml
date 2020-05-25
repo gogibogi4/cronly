@@ -4,6 +4,7 @@ test_job:
   scheduled_at: '* * * * *'
   class: '\Cronly\Test\TestJob'
   type: 'Class'
+  params: []
 
 test_job_2:
   name: 'Test job CLI'

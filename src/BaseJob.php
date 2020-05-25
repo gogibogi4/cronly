@@ -6,8 +6,9 @@ abstract class BaseJob
 {
     /**
      * Initialize variables
+     * @param array $params
      */
-    abstract function preExecute(): void;
+    abstract function preExecute(array $params = []): void;
 
     /**
      * Run job

@@ -14,7 +14,7 @@ class TestJob extends BaseJob
     /**
      * @inheritDoc
      */
-    function preExecute(): void
+    function preExecute(array $params = []): void
     {
         $this->dbHandle = MySQLHandle::getInstance();
     }

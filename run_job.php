@@ -53,7 +53,7 @@ function handleJob(array $data, string $type): void
         case JOB_TYPE_CLASS:
             $class = new $data['class'];
 
-            $class->preExecute();
+            $class->preExecute($data['params'] ?? []);
             $class->execute();
             $class->afterExecute();
 
