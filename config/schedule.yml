@@ -1,6 +1,12 @@
 # CRON FORMAT: MINUTE HOUR DAY WEEK MONTH
-test-job:
+test_job:
   name: 'Test job'
   scheduled_at: '* * * * *'
   class: '\Cronly\Test\TestJob'
   type: 'Class'
+
+test_job_2:
+  name: 'Test job CLI'
+  scheduled_at: '* * * * *'
+  command: 'echo "Test"'
+  type: 'Command'
