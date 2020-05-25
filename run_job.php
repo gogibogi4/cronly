@@ -6,10 +6,12 @@ use Symfony\Component\Yaml\Yaml;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+define('BASE_CONFIG_DIR', 'config/');
+
 const JOB_TYPE_CLASS   = 'Class';
 const JOB_TYPE_COMMAND = 'Command';
 
-$config = Yaml::parse(file_get_contents('config/schedule.yml'));
+$config = Yaml::parse(file_get_contents(sprintf('%s/schedule.yml', BASE_CONFIG_DIR)));
 
 $params = handleParams($argv);
 

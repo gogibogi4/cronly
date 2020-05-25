@@ -4,15 +4,19 @@ namespace Cronly\Test;
 
 use Cronly\BaseJob;
 use Cronly\Utils\Logger;
+use Cronly\Utils\MySQLHandle;
 
 class TestJob extends BaseJob
 {
+    /** @var \PDO */
+    private $dbHandle;
+
     /**
      * @inheritDoc
      */
     function preExecute(): void
     {
-        Logger::logMessage(1, 'preExecute');
+        $this->dbHandle = MySQLHandle::getInstance();
     }
 
     /**
@@ -20,7 +24,7 @@ class TestJob extends BaseJob
      */
     function execute(): void
     {
-        Logger::logMessage(2, 'execute');
+        var_export($this->dbHandle->query('SELECT * FROM table')->fetchAll(\PDO::FETCH_ASSOC));
     }
 
     /**
