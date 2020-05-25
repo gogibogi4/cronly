@@ -1,0 +1,6 @@
+# CRON FORMAT: MINUTE HOUR DAY WEEK MONTH
+test-job:
+  name: 'Test job'
+  scheduled_at: '* * * * *'
+  class: '\Cronly\Test\TestJob'
+  type: 'Class'
