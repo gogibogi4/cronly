@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-define('BASE_CONFIG_DIR', 'config/');
+define('BASE_CONFIG_DIR', __DIR__ . '/config/');
 
 const JOB_TYPE_CLASS   = 'Class';
 const JOB_TYPE_COMMAND = 'Command';
